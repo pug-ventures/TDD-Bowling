@@ -37,7 +37,8 @@ public class BowlingTest
     }
 
     @Test
-    public void givenStrike3And6_whenScore_thenReturn28() {
+    public void givenStrike3And6_whenScore_thenReturn28()
+    {
         game.roll(10,0, 3,6, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0);
         assertEquals(28, game.score());
     }

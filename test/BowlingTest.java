@@ -35,4 +35,10 @@ public class BowlingTest
         game.roll(5,5, 3,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0);
         assertEquals(16, game.score());
     }
+
+    @Test
+    public void givenStrike3And6_whenScore_thenReturn28() {
+        game.roll(10,0, 3,6, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0);
+        assertEquals(28, game.score());
+    }
 }

@@ -3,6 +3,7 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class BowlingTest
 {
@@ -41,5 +42,14 @@ public class BowlingTest
     {
         game.roll(10,0, 3,6, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0);
         assertEquals(28, game.score());
+    }
+
+    @Test
+    public void givenFalseNumberOfPinsDown_whenRoll_thenThrowRunTimeException() {
+        Exception exception = assertThrows(RuntimeException.class, () -> {
+           game.roll(11);
+        });
+
+        assertEquals("Wrong number of pins!", exception.getMessage());
     }
 }
